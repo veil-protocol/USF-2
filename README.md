@@ -192,6 +192,9 @@ Known constraints:
 | [`src/usf.py`](src/usf.py) | CLI interface |
 | [`src/usf_executor.py`](src/usf_executor.py) | Core execution engine |
 | [`src/usf_runner.py`](src/usf_runner.py) | High-level runner class |
+| [`agents/registry.yaml`](agents/registry.yaml) | Agent templates (40+ templates) |
+| [`agents/spawner.py`](agents/spawner.py) | Agent spawner with presets |
+| [`agents/domain_detector.py`](agents/domain_detector.py) | Domain auto-detection |
 | [`tests/test_usf.py`](tests/test_usf.py) | Test suite (43 tests) |
 | [`docs/PROMPTS.md`](docs/PROMPTS.md) | Ready-to-use invocation prompts |
 
