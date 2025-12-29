@@ -176,9 +176,9 @@ class AgentSpawner:
         if not agent:
             raise ValueError(f"Unknown agent: {agent_id}")
 
-        # Get template and interpolate
+        # Get template and interpolate (only replace {task}, leave other braces intact)
         template = agent.get('prompt_template', 'Task: {task}')
-        prompt = template.format(task=task)
+        prompt = template.replace('{task}', task)
 
         # Add context if provided
         if context:
@@ -222,9 +222,9 @@ class AgentSpawner:
         synthesis = archetype.get('domain_synthesis', {})
         persona = synthesis.get(domain, synthesis.get('default', archetype_id))
 
-        # Build prompt
+        # Build prompt (only replace {task}, leave other braces intact)
         template = archetype.get('prompt_template', 'Task: {task}')
-        prompt = template.format(task=task)
+        prompt = template.replace('{task}', task)
 
         return SpawnedAgent(
             agent_id=archetype_id,

@@ -8,7 +8,7 @@ Provides a simple interface for preparing and executing USF tasks.
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional
 
-from usf_executor import (
+from .usf_executor import (
     USFExecutor,
     auto_detect_compute,
     auto_detect_precision
